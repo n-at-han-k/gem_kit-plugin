@@ -1,0 +1,43 @@
+# frozen_string_literal: true
+
+require_relative "lib/gem_kit/plugin/version"
+
+Gem::Specification.new do |spec|
+  spec.name     = "gem_kit-plugin"
+  spec.version  = GemKit::Plugin::VERSION
+  spec.license  = "MIT"
+  spec.summary  = "A worked example of extending `gem kit` from another gem"
+
+  spec.description = <<~DESCRIPTION
+    gem_kit-release's `gem kit` command takes subcommands from other gems. This
+    is an example of one, and is meant to be read as much as installed.
+
+    It adds two commands, one of each shape there is: `gem kit audit`, an
+    ordinary command backed by a plain object, and `gem kit skill`, a
+    Thor::Group generator with the same create/identical/conflict reporting and
+    --force / --skip / --pretend that Rails generators have.
+
+    The whole mechanism is one GemKit::Release.plugin block in
+    lib/gem_kit/plugin.rb, and a lib/rubygems_plugin.rb that requires it.
+  DESCRIPTION
+
+  spec.author   = "Nathan Kidd"
+  spec.email    = "nathanblenheimkidd@gmail.com"
+  spec.homepage = "https://github.com/n-at-han-k/gem_kit-plugin"
+
+  spec.required_ruby_version = ">= 3.2"
+
+  spec.metadata = {
+    "source_code_uri"       => spec.homepage,
+    "changelog_uri"         => "#{spec.homepage}/blob/main/CHANGELOG.md",
+    "bug_tracker_uri"       => "#{spec.homepage}/issues",
+    "rubygems_mfa_required" => "true",
+  }
+
+  spec.files = Dir["lib/**/*.rb", "lib/**/*.erb"] + ["LICENSE", "README.md"]
+
+  spec.require_paths = ["lib"]
+
+  spec.add_dependency "gem_kit", ">= 0.2", "< 1.0"
+  spec.add_dependency "gem_kit-release", ">= 0.2.1", "< 1.0"
+end

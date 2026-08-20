@@ -1,0 +1,36 @@
+---
+name: <%= name %>
+description: >-
+  TODO: one sentence saying when an agent should reach for this skill. Name the
+  triggers — the words a user would actually type — because that sentence is
+  the whole of what the agent sees before deciding whether to load the rest.
+---
+
+# <%= name %>
+
+<%= summary %>
+
+This skill covers using **<%= gem_name %>** (<%= gem_version %><% unless homepage.empty? %>, <%= homepage %><% end %>).
+
+## When to use this
+
+TODO: the situations this applies to, in the user's words rather than the
+library's. An agent matches on the problem, not on the API.
+
+## Setup
+
+```ruby
+require "<%= require_path %>"
+```
+
+## The parts worth knowing
+
+TODO: the two or three entry points someone reaches for first, with a runnable
+line each. Not a method list — the docs already have one, and an agent that can
+read the docs does not need it copied here.
+
+## Gotchas
+
+TODO: what goes wrong the first time. This is the section that earns the skill
+its place: anything an agent could work out from the README does not belong
+here, and anything it could not is exactly what does.
