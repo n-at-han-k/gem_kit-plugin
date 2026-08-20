@@ -18,17 +18,6 @@ Gem::Specification.new do |spec|
     it. RubyGems loads the latter on every `gem` invocation, so installing the
     gem is the whole installation.
   DESCRIPTION
-    gem_kit-release's `gem kit` command takes subcommands from other gems. This
-    is an example of one, and is meant to be read as much as installed.
-
-    It adds two commands, one of each shape there is: `gem kit audit`, an
-    ordinary command backed by a plain object, and `gem kit skill`, a
-    Thor::Group generator with the same create/identical/conflict reporting and
-    --force / --skip / --pretend that Rails generators have.
-
-    The whole mechanism is one GemKit::Release.plugin block in
-    lib/gem_kit/plugin.rb, and a lib/rubygems_plugin.rb that requires it.
-  DESCRIPTION
 
   spec.author   = "Nathan Kidd"
   spec.email    = "nathanblenheimkidd@gmail.com"
