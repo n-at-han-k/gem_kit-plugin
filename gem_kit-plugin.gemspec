@@ -6,9 +6,18 @@ Gem::Specification.new do |spec|
   spec.name     = "gem_kit-plugin"
   spec.version  = GemKit::Plugin::VERSION
   spec.license  = "MIT"
-  spec.summary  = "A worked example of extending `gem kit` from another gem"
+  spec.summary  = "The smallest possible plugin for `gem kit`"
 
   spec.description = <<~DESCRIPTION
+    gem_kit-release's `gem kit` command takes subcommands from other gems. This
+    gem adds one, `gem kit plugin`, which prints a page explaining how it got
+    there — and that is all it does. It exists to be read.
+
+    The whole mechanism is a GemKit::Release.plugin block in
+    lib/gem_kit/plugin.rb and a one-line lib/rubygems_plugin.rb that requires
+    it. RubyGems loads the latter on every `gem` invocation, so installing the
+    gem is the whole installation.
+  DESCRIPTION
     gem_kit-release's `gem kit` command takes subcommands from other gems. This
     is an example of one, and is meant to be read as much as installed.
 
@@ -34,7 +43,7 @@ Gem::Specification.new do |spec|
     "rubygems_mfa_required" => "true",
   }
 
-  spec.files = Dir["lib/**/*.rb", "lib/**/*.erb"] + ["LICENSE", "README.md"]
+  spec.files = Dir["lib/**/*.rb"] + ["LICENSE", "README.md"]
 
   spec.require_paths = ["lib"]
 

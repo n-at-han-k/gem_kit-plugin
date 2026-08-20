@@ -9,15 +9,7 @@ follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
-- `gem kit audit` — reports what a gem is missing before anyone depends on it:
-  a description that merely repeats the summary, a missing licence, homepage or
-  author, absent metadata links, a version file the gemspec reads but that is
-  not there. Serious findings fail; `--strict` makes every finding fail.
-- `gem kit skill NAME` — generates an agent skill directory for the gem, with
-  frontmatter filled in from the gemspec. A `Thor::Group` generator, so it
-  reports `create` / `identical` / `conflict` and takes `--force`, `--skip` and
-  `--pretend`.
-- Both are registered through one `GemKit::Release.plugin` block in
-  `lib/gem_kit/plugin.rb`, loaded by a one-line `lib/rubygems_plugin.rb`. That
-  is the whole extension mechanism, and the reason this gem exists: it is an
-  example to read.
+- `gem kit plugin` — prints a page explaining how a gem adds a command to
+  `gem kit`, which this gem did in order to print it. The whole mechanism is a
+  `GemKit::Release.plugin` block in `lib/gem_kit/plugin.rb` and a one-line
+  `lib/rubygems_plugin.rb` that requires it.
